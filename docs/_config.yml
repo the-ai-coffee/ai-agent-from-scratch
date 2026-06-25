@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: AI Agent Series
+description: Building an AI agent from scratch, one stage at a time.
+url: "https://the-ai-coffee.github.io"
+baseurl: "/-ai-agent-from-scratch"
