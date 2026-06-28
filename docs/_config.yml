@@ -1,4 +1,5 @@
-theme: jekyll-theme-minima
+#theme: jekyll-theme-minimal
+remote_theme: "jekyll/minima@1e8a445"
 title: AI Agent Series
 description: Building an AI agent from scratch, one stage at a time.
 url: "https://the-ai-coffee.github.io"
