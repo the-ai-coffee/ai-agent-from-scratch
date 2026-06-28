@@ -51,6 +51,10 @@ published via GitHub Pages from `docs/`.
 - Every stage's blog post explains *why* that stage's mechanism works the
   way it does, not just what the code does -- write posts assuming the
   reader has the code open alongside the post.
-- Tests are written only where there's real logic to verify (e.g. loop
-  termination conditions); trivial stages don't need padding for coverage's
-  sake.
+- Each stage's post ends with a "What's next" section linking forward to
+  the next stage's post. Link between posts with
+  `[Text]({{ site.baseurl }}{% post_url YYYY-MM-DD-agent-NNN-<slug> %})` --
+  never a raw `.md` filename (it 404s) and never a hardcoded `/baseurl/`
+  prefix. `{% post_url %}` resolves the permalink and errors the build on a
+  bad slug; `{{ site.baseurl }}` supplies the GitHub Pages path prefix.
+- Tests are written only where there's real logic to verify (eg. loop termination conditions); trivial stages don't need padding for coverage's sake.

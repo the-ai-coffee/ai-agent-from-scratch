@@ -48,4 +48,4 @@ Type a line, press enter, see it echoed. Press enter on an empty line to stop.
 
 ## What's next
 
-Agent-002 will replace the echo with a real LLM call, keeping the same __read-act-repeat__ shape.
+[Agent-002]({{ site.baseurl }}{% post_url 2026-06-26-agent-002-llm-call %}) replaces the echo with a real LLM call, keeping the same __read-act-repeat__ shape.
