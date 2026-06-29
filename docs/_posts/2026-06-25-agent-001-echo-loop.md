@@ -6,6 +6,8 @@ author: mikamboo
 tags: [ai, agents, from-scratch, python, agent-loop, testing]
 ---
 
+🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-25-agent-001-echo-loop-fr %})
+
 Every agent, no matter how capable, is built around the same shape: read an
 observation, decide on an action, repeat. Before adding an LLM, tools, or
 evals, it's worth building that loop on its own so later stages have

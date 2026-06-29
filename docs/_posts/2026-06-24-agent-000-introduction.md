@@ -6,6 +6,8 @@ author: mikamboo
 tags: [ai, agents, from-scratch, python, llm]
 ---
 
+🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-24-agent-000-introduction-fr %})
+
 "AI agent" has become one of those words that sounds more complicated than
 it is. We talk about agents that reason, remember, use tools -- and somewhere along the way the whole thing starts to feel like magic happening inside a black box.
 
