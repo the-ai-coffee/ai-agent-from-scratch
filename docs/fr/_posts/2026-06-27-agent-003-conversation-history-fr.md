@@ -76,4 +76,4 @@ Essayez un échange en deux temps : posez une question, puis enchaînez avec une
 
 ## Et après
 
-Notre agent peut désormais tenir une conversation, mais il ne fait toujours que *parler*. Il ne peut rien rechercher, effectuer un calcul, ni toucher au monde extérieur. Agent-004 lui donnera des **outils** — un moyen d'agir au-delà de la simple production de texte, et le véritable début d'un comportement d'agent.
+Notre agent peut désormais tenir une conversation, mais il n'a aucun caractère propre — aucune instruction permanente sur qui il est ni sur la manière dont il doit se comporter. [Agent-004]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt-fr %}) lui donne un **prompt système** : une persona configurable, distincte de la conversation, qui façonne chaque réponse.

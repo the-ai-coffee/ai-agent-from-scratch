@@ -76,4 +76,4 @@ Try a two-step exchange: ask something, then ask a follow-up that only makes sen
 
 ## What's next
 
-Our agent can now hold a conversation, but it still only ever *talks*. It can't look anything up, run a calculation, or touch the outside world. Agent-004 will give it **tools** -- a way to take actions beyond producing text, and the real beginning of agent-like behaviour.
+Our agent can now hold a conversation, but it has no character of its own -- no standing instructions about who it is or how it should behave. [Agent-004]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt %}) gives it a **system prompt**: a configurable persona, separate from the conversation, that shapes every reply.
