@@ -106,4 +106,4 @@ Demandez-lui quelque chose d'arithmétique — « combien font 4823 fois 1979 ? 
 
 ## Et après
 
-Pour l'instant, l'agent peut agir, mais il ne peut pas parler de ce qu'il a fait — le résultat de l'outil n'atteint jamais le modèle. Agent-006 ferme cette boucle : nous renvoyons le résultat dans la conversation et laissons le modèle rédiger une vraie réponse autour de lui. Ce simple aller-retour — demander, exécuter, renvoyer, répondre — est le battement de cœur de tout agent, et c'est la prochaine chose que nous construisons.
+Pour l'instant, l'agent peut agir, mais il ne peut pas parler de ce qu'il a fait — le résultat de l'outil n'atteint jamais le modèle. [Agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %}) ferme cette boucle : nous renvoyons le résultat dans la conversation et laissons le modèle rédiger une vraie réponse autour de lui. Ce simple aller-retour — demander, exécuter, renvoyer, répondre — est le battement de cœur de tout agent, et c'est la prochaine chose que nous construisons.

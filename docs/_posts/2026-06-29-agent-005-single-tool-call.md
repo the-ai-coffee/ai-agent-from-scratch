@@ -106,4 +106,4 @@ Ask it something arithmetic -- "what's 4823 times 1979?" -- and watch the `[tool
 
 ## What's next
 
-Right now the agent can act, but it can't talk about what it did -- the tool's result never reaches the model. Agent-006 closes that loop: we feed the result back into the conversation and let the model write a real answer around it. That single round-trip -- ask, run, feed back, reply -- is the heartbeat of every agent, and it's the next thing we build.
+Right now the agent can act, but it can't talk about what it did -- the tool's result never reaches the model. [Agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}) closes that loop: we feed the result back into the conversation and let the model write a real answer around it. That single round-trip -- ask, run, feed back, reply -- is the heartbeat of every agent, and it's the next thing we build.

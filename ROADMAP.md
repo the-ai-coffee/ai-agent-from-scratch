@@ -22,12 +22,11 @@ stage covering more than one new mechanism.
    sending each line in isolation; accumulate a `messages` list across
    turns and pass the whole list to every `messages.create` call. First
    time the agent has memory of what was said earlier -- in-context,
-   lossless within the session, gone once the process ends. This is the
-   deliberate counterpart to agent-007's long-term memory (RAG):
-   short-term memory is "everything said so far, kept verbatim in
-   context"; long-term memory is "facts retrieved on demand from outside
-   context." Test: two-turn exchange where the second reply depends on
-   the first, using a fake client that asserts on the message list it
+   lossless within the session, gone once the process ends. agent-010
+   later makes this same memory survive a restart by persisting the list
+   to disk; the two together are the honest memory arc (in-context now,
+   on-disk later). Test: two-turn exchange where the second reply depends
+   on the first, using a fake client that asserts on the message list it
    received.
 
 4. **agent-004: system-prompt** -- Introduce a `system` parameter so the
@@ -46,27 +45,20 @@ stage covering more than one new mechanism.
    result to the message list and call the model again so it can use the
    result to produce a final natural-language answer. First stage with
    genuine multi-step agentic behavior (call -> tool -> call -> answer).
-   This is the mechanism RAG (next stage) plugs into. Test: fake client
-   scripted to return `tool_use` on call 1 and text on call 2; assert the
-   loop terminates after the right number of calls.
+   This is the mechanism every tool from here on plugs into -- the loop
+   is the agent; everything after this is a tool hung off it. Test: fake
+   client scripted to return `tool_use` on call 1 and text on call 2;
+   assert the loop terminates after the right number of calls.
 
-7. **agent-007: RAG (long-term memory)** -- Let the agent search
-   documents/a knowledge base instead of relying only on what's in
-   context. Covers: what an embedding is (simple conceptual treatment),
-   a minimal in-memory vector store built with `numpy` (cosine
-   similarity over a handful of stored chunks), and wiring that search up
-   as a tool through the loop built in agent-006. Test: fake embedding
-   function and a small fixed corpus; assert the right chunk is
-   retrieved and passed back as a tool_result for a given query.
+7. **agent-007: multi-tool-dispatch** -- Give the agent two tools (e.g. a
+   calculator and a weather lookup) so a registry actually earns its
+   keep. Generalize from a single hardcoded tool to a dict of
+   name -> function + schema; covers the model choosing among tools,
+   including choosing none. Both tools are still stubs -- the point here
+   is dispatch, not what the tools do. Test: fake client picks tool B;
+   assert dispatch calls B's function, not A's.
 
-8. **agent-008: multi-tool-dispatch** -- The agent now has two tools
-   (RAG search from agent-007, plus one more -- e.g. a calculator) so
-   this is the first point a registry actually earns its keep. Generalize
-   from a single hardcoded tool to a dict of name -> function + schema;
-   covers the model choosing among tools, including choosing none. Test:
-   fake client picks tool B; assert dispatch calls B's function, not A's.
-
-9. **agent-009: malformed-tool-call-handling** -- Tool calls can come
+8. **agent-008: malformed-tool-call-handling** -- Tool calls can come
    back with invalid JSON args, an unknown tool name, or a tool that
    raises. Add minimal handling for each (catch, report back to the
    model as a `tool_result` with `is_error`, let the model retry or
@@ -74,12 +66,29 @@ stage covering more than one new mechanism.
    failure modes, asserting the loop survives and feeds an error
    tool_result back.
 
+9. **agent-009: RAG (a tool with real guts)** -- Every tool so far has
+   been a stub: the lesson was the loop, not the tool. Now build the
+   first tool with real internal logic -- document search over a
+   knowledge base -- and run it straight through the complete, robust
+   tool subsystem built in 005-008. Nothing new happens to the *agent*
+   here; the *tool* is what gains substance. That is the point, and it's
+   why RAG lands here rather than earlier: it's the payoff that proves
+   the loop generalizes to a real-world capability, not a new kind of
+   agency. Along the way: what an embedding is (simple conceptual
+   treatment), a minimal in-memory vector store built with `numpy`
+   (cosine similarity over a handful of stored chunks), and the fact that
+   this retrieve-then-answer pattern has a name -- RAG,
+   retrieval-augmented generation. Test: fake embedding function and a
+   small fixed corpus; assert the right chunk is retrieved and passed
+   back as a tool_result for a given query.
+
 10. **agent-010: persistent-session** -- Save/load the conversation
     history to/from disk (e.g. JSON) so a session survives process
     restart. Keeps the in-memory `messages` list as the source of truth
-    during a run; adds load-at-start / save-at-exit. Test: write a
-    transcript, restart `run` with a fresh process equivalent, assert
-    prior turns are present.
+    during a run; adds load-at-start / save-at-exit -- the durable,
+    on-disk counterpart to agent-003's in-context memory, closing the
+    memory arc those two stages share. Test: write a transcript, restart
+    `run` with a fresh process equivalent, assert prior turns are present.
 
 11. **agent-011: evals-and-tracing** -- Two things that belong together
     because they answer the same question -- "what is the agent actually
