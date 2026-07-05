@@ -31,12 +31,13 @@ See [CLAUDE.md](CLAUDE.md) for repo conventions and commands.
 | 003 | conversation-history (short-term memory) | Built | [agents/agent-003-conversation-history](agents/agent-003-conversation-history) | [Conversation History](docs/_posts/2026-06-27-agent-003-conversation-history.md) |
 | 004 | system-prompt | Built | [agents/agent-004-system-prompt](agents/agent-004-system-prompt) | [The System Prompt](docs/_posts/2026-06-28-agent-004-system-prompt.md) |
 | 005 | single-tool-call | Built | [agents/agent-005-single-tool-call](agents/agent-005-single-tool-call) | [The First Tool](docs/_posts/2026-06-29-agent-005-single-tool-call.md) |
-| 006 | tool-result-loop | Planned | -- | -- |
-| 007 | RAG (long-term memory) | Planned | -- | -- |
-| 008 | multi-tool-dispatch | Planned | -- | -- |
-| 009 | malformed-tool-call-handling | Planned | -- | -- |
-| 010 | persistent-session | Planned | -- | -- |
-| 011 | evals-and-tracing | Planned | -- | -- |
-| 012 | capstone | Planned | -- | -- |
+| 006 | tool-result-loop | Built | [agents/agent-006-tool-result-loop](agents/agent-006-tool-result-loop) | [Closing the Loop](docs/_posts/2026-06-30-agent-006-tool-result-loop.md) |
+| 007 | multi-tool-dispatch | Planned | -- | -- |
+| 008 | malformed-tool-call-handling | Planned | -- | -- |
+| 009 | knowledge-tools (agentic search vs. RAG) | Planned | -- | -- |
+| 010 | context-compaction | Planned | -- | -- |
+| 011 | subagents (agent-as-tool) | Planned | -- | -- |
+| 012 | evals-and-tracing | Planned | -- | -- |
+| 013 | capstone | Planned | -- | -- |
 
 Details on what each planned stage covers and why it's scoped the way it is live in [ROADMAP.md](ROADMAP.md).

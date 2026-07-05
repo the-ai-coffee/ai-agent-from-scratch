@@ -113,4 +113,4 @@ Ask "what's 4823 times 1979?" and compare it to agent-005. You'll still see the 
 
 ## What's next
 
-We now have the complete heartbeat of an agent: call, act, feed back, answer, repeat. But our agent's one tool only does arithmetic -- it still can't look anything *up*. Agent-007 gives it a memory it can search: a small knowledge base, and a search tool wired straight into the loop we just built. The result-feedback path from this stage is exactly what carries a retrieved fact back to the model. That's how an agent stops being limited to what's in its context and starts reaching for what it needs -- next.
+We now have the complete heartbeat of an agent: call, act, feed back, answer, repeat. But our agent still has exactly one tool, hardwired into the loop. Real agents carry a toolbox, and the interesting question becomes one of *choice*: given several tools, how does the model pick the right one -- or decide it needs none at all? Agent-007 gives our agent a second tool and a proper registry to dispatch between them, turning the single hardcoded gadget into a system any tool can plug into. The loop we just built is exactly what makes that possible -- next.

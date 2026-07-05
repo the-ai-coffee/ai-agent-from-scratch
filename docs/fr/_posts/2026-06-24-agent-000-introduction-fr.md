@@ -49,11 +49,11 @@ On commence par une boucle qui ne fait rien d'autre qu'un écho. On termine avec
 un agent qui possède :
 
 * une mémoire à court terme,
-* une mémoire à long terme,
 * l'usage d'outils,
-* la récupération d'information (RAG),
+* des outils de connaissance (recherche et RAG),
 * la gestion des erreurs,
-* la persistance,
+* la gestion du contexte (compaction),
+* des sous-agents (multi-agent),
 * des évaluations (evals).
 
 C'est exactement l'ensemble de fonctionnalités que les grands frameworks vous
@@ -72,12 +72,13 @@ AutoGen, pour que vous puissiez enfin voir ce que ces frameworks font
 | 004 | [Le prompt système]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt-fr %}) | Une persona/des instructions configurables, séparées des tours. |
 | 005 | [Le premier outil]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call-fr %}) | Le modèle peut demander un outil ; on l'exécute. |
 | 006 | tool-result-loop | Le résultat de l'outil revient au modèle pour une réponse finale. |
-| 007 | RAG | Mémoire à long terme : récupération sur un petit vector store, branchée comme un outil. |
-| 008 | multi-tool-dispatch | Un vrai registre : le modèle choisit parmi plusieurs outils, ou aucun. |
-| 009 | malformed-tool-call-handling | JSON invalide, outils inconnus, exceptions levées — gérés, et non fatals. |
-| 010 | persistent-session | L'historique de conversation survit à un redémarrage du processus. |
-| 011 | evals-and-tracing | Journalisation pensée-vs-action, plus un harnais d'évaluation scripté. |
-| 012 | capstone | Tout combiné, plus une comparaison avec les grands frameworks. |
+| 007 | multi-tool-dispatch | Un vrai registre : le modèle choisit parmi plusieurs outils, ou aucun. |
+| 008 | malformed-tool-call-handling | JSON invalide, outils inconnus, exceptions levées — gérés, et non fatals. |
+| 009 | knowledge-tools | Les premiers outils avec de vraies tripes : recherche agentique vs. RAG sur un petit vector store. |
+| 010 | context-compaction | Quand l'historique ne tient plus : résumer les vieux tours, garder les récents. |
+| 011 | subagents | Le multi-agent, démystifié : un agent comme outil, pour isoler le contexte. |
+| 012 | evals-and-tracing | Journalisation pensée-vs-action, plus un harnais d'évaluation scripté. |
+| 013 | capstone | Tout combiné, plus une comparaison avec les grands frameworks. |
 
 L'argumentaire de conception complet pour chaque étape — pourquoi elle est
 cadrée ainsi, ce qu'elle teste, et comment elle se connecte aux étapes

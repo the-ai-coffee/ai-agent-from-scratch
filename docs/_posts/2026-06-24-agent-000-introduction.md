@@ -41,11 +41,11 @@ have the code open in the other window.
 Start with a loop that does nothing but echo. End with an agent that has:
 
 * short-term memory,
-* long-term memory,
 * tool use,
-* retrieval (RAG),
+* knowledge tools (search and RAG),
 * error handling,
-* persistence,
+* context management (compaction),
+* subagents (multi-agent),
 * evals.
 
 That's the exact feature set the big frameworks sell you -- except you'll
@@ -64,12 +64,13 @@ recognize all of it.
 | 004 | [The System Prompt]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt %}) | A configurable persona/instructions, separate from turns. |
 | 005 | [The First Tool]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call %}) | The model can request one tool; we run it. |
 | 006 | tool-result-loop | The tool's result loops back to the model for a final answer. |
-| 007 | RAG | Long-term memory: retrieval over a small vector store, wired up as a tool. |
-| 008 | multi-tool-dispatch | A real registry: the model chooses among several tools, or none. |
-| 009 | malformed-tool-call-handling | Bad JSON, unknown tools, raised exceptions -- handled, not fatal. |
-| 010 | persistent-session | Conversation history survives a process restart. |
-| 011 | evals-and-tracing | Logging thought-vs-action, plus a scripted eval harness. |
-| 012 | capstone | Everything combined, plus a comparison against the big frameworks. |
+| 007 | multi-tool-dispatch | A real registry: the model chooses among several tools, or none. |
+| 008 | malformed-tool-call-handling | Bad JSON, unknown tools, raised exceptions -- handled, not fatal. |
+| 009 | knowledge-tools | The first tools with real guts: agentic search vs. RAG over a small vector store. |
+| 010 | context-compaction | When the history no longer fits: summarize old turns, keep recent ones. |
+| 011 | subagents | Multi-agent, demystified: an agent as a tool, for context isolation. |
+| 012 | evals-and-tracing | Logging thought-vs-action, plus a scripted eval harness. |
+| 013 | capstone | Everything combined, plus a comparison against the big frameworks. |
 
 The full design rationale for each stage -- why it's scoped the way it
 is, what it tests, and how it connects to neighboring stages -- lives in
