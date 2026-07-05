@@ -90,6 +90,34 @@ tool_results.append({
 
 Le `tool_use_id` est le fil qui relie les deux. Quand le modèle a réclamé la calculatrice, sa requête portait un `id`. Notre résultat cite ce même `id` en retour. C'est ainsi que le modèle sait que *cette* réponse appartient à *cette* question — indispensable dès qu'un tour comporte plus d'un appel d'outil, sinon les résultats formeraient un tas sans étiquette. C'est la différence entre « voici 5, voici 20 » et « la chose demandée à 15 h 01 fait 5 ; la chose demandée à 15 h 02 fait 20 ».
 
+C'est plus clair quand on regarde le JSON brut. Après un tour d'outil, voici les deux messages que nous avons ajoutés à l'historique — la requête du modèle, puis notre réponse :
+
+```json
+{
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01A9Fg...",
+      "name": "calculator",
+      "input": { "expression": "2 + 3" }
+    }
+  ]
+}
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A9Fg...",
+      "content": "5"
+    }
+  ]
+}
+```
+
+Lisez-les ensemble et la forme saute aux yeux : l'assistant émet un bloc `tool_use` avec un `id` et les arguments qu'il a remplis (`input`) ; nous répondons par un message `user` dont le bloc `tool_result` porte le même `id` dans son `tool_use_id` et la sortie de l'outil dans `content`. L'`id` est la seule chose qui relie un résultat à sa requête — tout le reste de l'aller-retour repose sur cette correspondance.
+
 ## Pourquoi elle peut boucler plus d'une fois
 
 Remarquez que nous ne supposons jamais que le modèle veut exactement un appel d'outil. Après avoir renvoyé un résultat, nous rebouclons directement vers le haut et rappelons le modèle — et il est libre de réclamer *un autre* outil. Peut-être avait-il besoin de calculer un sous-total, de le voir, puis d'en calculer un second. La boucle gère naturellement une chaîne d'appels d'outils de n'importe quelle longueur, car la seule chose qui y met fin est le choix du modèle de répondre avec des mots.

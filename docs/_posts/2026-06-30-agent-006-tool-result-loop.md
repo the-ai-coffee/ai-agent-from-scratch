@@ -90,6 +90,34 @@ tool_results.append({
 
 The `tool_use_id` is the thread tying the two together. When the model asked for the calculator, its request carried an `id`. Our result quotes that same `id` back. That's how the model knows *this* answer belongs to *that* question -- essential once a turn involves more than one tool call, because otherwise the results would be an unlabelled pile. It's the difference between "here's 5, here's 20" and "the thing you asked at 3:01 is 5; the thing you asked at 3:02 is 20."
 
+It's easier to see once you look at the raw JSON. After one tool round, these are the two messages we appended to the history -- the model's request, then our reply to it:
+
+```json
+{
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01A9Fg...",
+      "name": "calculator",
+      "input": { "expression": "2 + 3" }
+    }
+  ]
+}
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A9Fg...",
+      "content": "5"
+    }
+  ]
+}
+```
+
+Read them together and the shape is obvious: the assistant emits a `tool_use` block with an `id` and the arguments it filled in (`input`); we answer with a `user` message whose `tool_result` block carries the same `id` in its `tool_use_id` and the tool's output in `content`. The `id` is the only thing linking a result to its request -- everything else about the round-trip hangs off that match.
+
 ## Why it can loop more than once
 
 Notice we never assume the model wants exactly one tool call. After we feed a result back, we loop straight to the top and call the model again -- and it's free to ask for *another* tool. Maybe it needed to compute one subtotal, see it, then compute a second. The loop naturally handles a chain of tool calls of any length, because the only thing that ends it is the model choosing to answer in words instead.
