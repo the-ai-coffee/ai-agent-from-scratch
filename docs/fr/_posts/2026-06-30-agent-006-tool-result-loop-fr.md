@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, outils, function-calling]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}) | 🇫🇷 Français
 
-Agent-005 s'est terminé sur un suspense. Nous avions donné une calculatrice à l'agent, nous l'avions vu *décider* de tendre la main vers l'outil, nous avions exécuté l'outil et affiché le nombre brut — puis nous nous étions arrêtés. Le modèle avait demandé un calcul, nous l'avions fait, mais nous n'avions jamais dit au modèle ce qui était revenu. La main s'était tendue et avait saisi quelque chose ; le cerveau n'avait jamais su quoi. Cette étape corrige cela, et ce faisant construit la boucle qui fait d'un agent un agent.
+[Agent-005]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call-fr %}) s'est terminé sur un suspense. Nous avions donné une calculatrice à l'agent, nous l'avions vu *décider* de tendre la main vers l'outil, nous avions exécuté l'outil et affiché le nombre brut — puis nous nous étions arrêtés. Le modèle avait demandé un calcul, nous l'avions fait, mais nous n'avions jamais dit au modèle ce qui était revenu. La main s'était tendue et avait saisi quelque chose ; le cerveau n'avait jamais su quoi. Cette étape corrige cela, et ce faisant construit la boucle qui fait d'un agent un agent.
 
 ## La moitié qui manquait
 

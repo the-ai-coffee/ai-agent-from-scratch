@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, outils, function-calling]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call %}) | 🇫🇷 Français
 
-À l'étape agent-004, notre agent avait une mémoire et une persona, mais il ne faisait toujours que *parler*. Demandez-lui « combien font 4823 fois 1979 ? » et il produisait un nombre avec assurance — qui pouvait être faux, car un modèle de langage prédit du texte, il ne calcule pas. Il ne pouvait rien rechercher, rien exécuter, ni toucher au monde au-delà de ses propres mots. Cette étape ouvre une brèche. Nous donnons à l'agent son premier **outil**.
+À l'étape [agent-004]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt-fr %}), notre agent avait une mémoire et une persona, mais il ne faisait toujours que *parler*. Demandez-lui « combien font 4823 fois 1979 ? » et il produisait un nombre avec assurance — qui pouvait être faux, car un modèle de langage prédit du texte, il ne calcule pas. Il ne pouvait rien rechercher, rien exécuter, ni toucher au monde au-delà de ses propres mots. Cette étape ouvre une brèche. Nous donnons à l'agent son premier **outil**.
 
 ## Un cerveau qui reçoit sa première main
 
@@ -89,7 +89,7 @@ Il ne peut pas encore dire « Cela fait 5. » — parce que le modèle n'a jamai
 
 Ce n'est pas un oubli — c'est la couture entre cette étape et la suivante. Nous nous arrêtons délibérément à mi-chemin du cycle d'utilisation de l'outil pour que vous puissiez voir les deux moitiés séparément : *cette* étape, c'est « le modèle demande, nous exécutons » ; l'étape suivante, c'est « le résultat repart, et le modèle parle ». Les séparer rend chaque moitié lisible avant qu'elles ne fusionnent en la boucle qui définit un agent.
 
-Il y a aussi une raison pratique au fait que nous retirons le tour de la mémoire (`messages.pop()`). Une requête d'outil à laquelle aucun résultat n'est renvoyé est un échange inachevé — la laisser dans l'historique casserait l'appel suivant. Puisque le modèle ne fait pas vraiment partie de cet échange pour l'instant, le plus propre est de ne pas l'enregistrer. À l'étape agent-006, l'enregistrer correctement est précisément ce qui permet au modèle de poursuivre.
+Il y a aussi une raison pratique au fait que nous retirons le tour de la mémoire (`messages.pop()`). Une requête d'outil à laquelle aucun résultat n'est renvoyé est un échange inachevé — la laisser dans l'historique casserait l'appel suivant. Puisque le modèle ne fait pas vraiment partie de cet échange pour l'instant, le plus propre est de ne pas l'enregistrer. À l'étape [agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %}), l'enregistrer correctement est précisément ce qui permet au modèle de poursuivre.
 
 ## Une note sur la sécurité
 

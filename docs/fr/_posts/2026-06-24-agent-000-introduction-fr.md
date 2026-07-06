@@ -71,8 +71,8 @@ AutoGen, pour que vous puissiez enfin voir ce que ces frameworks font
 | 003 | [L'historique de conversation]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history-fr %}) | Mémoire à court terme : une liste `messages` transportée d'un tour à l'autre. |
 | 004 | [Le prompt système]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt-fr %}) | Une persona/des instructions configurables, séparées des tours. |
 | 005 | [Le premier outil]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call-fr %}) | Le modèle peut demander un outil ; on l'exécute. |
-| 006 | tool-result-loop | Le résultat de l'outil revient au modèle pour une réponse finale. |
-| 007 | multi-tool-dispatch | Un vrai registre : le modèle choisit parmi plusieurs outils, ou aucun. |
+| 006 | [Fermer la boucle]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %}) | Le résultat de l'outil revient au modèle pour une réponse finale. |
+| 007 | [Une boîte à outils, pas un outil]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch-fr %}) | Un vrai registre : le modèle choisit parmi plusieurs outils, ou aucun. |
 | 008 | malformed-tool-call-handling | JSON invalide, outils inconnus, exceptions levées — gérés, et non fatals. |
 | 009 | knowledge-tools | Les premiers outils avec de vraies tripes : recherche agentique vs. RAG sur un petit vector store. |
 | 010 | context-compaction | Quand l'historique ne tient plus : résumer les vieux tours, garder les récents. |

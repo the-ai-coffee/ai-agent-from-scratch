@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, outils, dispatch, mcp]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch %}) | 🇫🇷 Français
 
-Dans agent-006, nous avons fermé la boucle : le modèle réclame un outil, nous l'exécutons, nous renvoyons le résultat, et le modèle répond. Cette boucle *est* l'agent — nous l'avions dit, et nous le pensions. Mais notre agent ne possède qu'un seul outil, et pire, le nom de cet outil est câblé en dur dans le code : quelque part dans la boucle se trouve une ligne qui dit, en substance, « si le modèle a demandé la calculatrice, exécute la calculatrice ». Cela fonctionne très bien pour un outil. Cela cesse d'être une architecture et commence à devenir un fouillis dès qu'on en ajoute un deuxième.
+Dans [agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %}), nous avons fermé la boucle : le modèle réclame un outil, nous l'exécutons, nous renvoyons le résultat, et le modèle répond. Cette boucle *est* l'agent — nous l'avions dit, et nous le pensions. Mais notre agent ne possède qu'un seul outil, et pire, le nom de cet outil est câblé en dur dans le code : quelque part dans la boucle se trouve une ligne qui dit, en substance, « si le modèle a demandé la calculatrice, exécute la calculatrice ». Cela fonctionne très bien pour un outil. Cela cesse d'être une architecture et commence à devenir un fouillis dès qu'on en ajoute un deuxième.
 
 Cette étape ajoute le deuxième outil — et avec lui, la chose qu'un seul outil ne vous force jamais à construire : un *registre*.
 

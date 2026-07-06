@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, tools, function-calling]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %})
 
-Agent-005 ended on a cliffhanger. We gave the agent a calculator, watched it *decide* to reach for the tool, ran the tool, and printed the raw number -- and then stopped. The model asked for a calculation, we did it, but we never told the model what came back. The hand reached out and grabbed something; the brain never found out what. This stage fixes that, and in doing so builds the loop that makes an agent an agent.
+[Agent-005]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call %}) ended on a cliffhanger. We gave the agent a calculator, watched it *decide* to reach for the tool, ran the tool, and printed the raw number -- and then stopped. The model asked for a calculation, we did it, but we never told the model what came back. The hand reached out and grabbed something; the brain never found out what. This stage fixes that, and in doing so builds the loop that makes an agent an agent.
 
 ## The half that was missing
 

@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, anthropic-sdk]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-06-26-agent-002-llm-call %}) | 🇫🇷 Français
 
-Agent-001 a construit la boucle lire-agir-répéter avec l'action la plus simple possible : renvoyer la ligne en écho. Cette étape garde cette boucle entièrement intacte et y substitue la seule chose qui change entre un écho et un agent — l'action est désormais un appel à un LLM, par exemple Claude AI.
+[Agent-001]({{ site.baseurl }}{% post_url 2026-06-25-agent-001-echo-loop-fr %}) a construit la boucle lire-agir-répéter avec l'action la plus simple possible : renvoyer la ligne en écho. Cette étape garde cette boucle entièrement intacte et y substitue la seule chose qui change entre un écho et un agent — l'action est désormais un appel à un LLM, par exemple Claude AI.
 
 ## Le code
 

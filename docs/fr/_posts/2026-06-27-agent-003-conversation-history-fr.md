@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, memoire, conversation]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history %}) | 🇫🇷 Français
 
-Agent-002 a donné un vrai cerveau à notre boucle : au lieu de renvoyer votre ligne en écho, il l'envoyait à Claude et affichait la réponse. Mais cet agent n'avait aucune mémoire. Demandez-lui « quelle est la capitale de la France ? », puis enchaînez avec « et sa population ? », et il n'aurait aucune idée de ce à quoi « sa » renvoie. Chaque ligne atterrissait dans une pièce vide. Cette étape corrige cela — l'agent commence à se souvenir de la conversation.
+[Agent-002]({{ site.baseurl }}{% post_url 2026-06-26-agent-002-llm-call-fr %}) a donné un vrai cerveau à notre boucle : au lieu de renvoyer votre ligne en écho, il l'envoyait à Claude et affichait la réponse. Mais cet agent n'avait aucune mémoire. Demandez-lui « quelle est la capitale de la France ? », puis enchaînez avec « et sa population ? », et il n'aurait aucune idée de ce à quoi « sa » renvoie. Chaque ligne atterrissait dans une pièce vide. Cette étape corrige cela — l'agent commence à se souvenir de la conversation.
 
 ## La seule chose qui change : une liste qui grandit
 

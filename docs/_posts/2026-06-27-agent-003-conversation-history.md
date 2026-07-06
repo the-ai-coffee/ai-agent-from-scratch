@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, memory, conversation]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history-fr %})
 
-Agent-002 gave our loop a real brain: instead of echoing your line, it sent it to Claude and printed the reply. But that agent had no memory. Ask it "what's the capital of France?", then follow up with "and its population?", and it would have no idea what "its" refers to. Each line landed in a blank room. This stage fixes that -- the agent starts remembering the conversation.
+[Agent-002]({{ site.baseurl }}{% post_url 2026-06-26-agent-002-llm-call %}) gave our loop a real brain: instead of echoing your line, it sent it to Claude and printed the reply. But that agent had no memory. Ask it "what's the capital of France?", then follow up with "and its population?", and it would have no idea what "its" refers to. Each line landed in a blank room. This stage fixes that -- the agent starts remembering the conversation.
 
 ## The one thing that changes: a list that grows
 

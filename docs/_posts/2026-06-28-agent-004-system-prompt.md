@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, system-prompt, persona]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt-fr %})
 
-Agent-003 gave our agent a memory: a growing `messages` list, re-sent every turn, so it could follow a conversation instead of treating each line as a blank slate. But there's still something missing. The agent has no *character* of its own. It has no standing instructions -- no sense of who it is or how it's meant to behave -- beyond whatever happens to be in the conversation so far. This stage adds exactly that, with one new ingredient: the **system prompt**.
+[Agent-003]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history %}) gave our agent a memory: a growing `messages` list, re-sent every turn, so it could follow a conversation instead of treating each line as a blank slate. But there's still something missing. The agent has no *character* of its own. It has no standing instructions -- no sense of who it is or how it's meant to behave -- beyond whatever happens to be in the conversation so far. This stage adds exactly that, with one new ingredient: the **system prompt**.
 
 ## Instructions that aren't part of the conversation
 

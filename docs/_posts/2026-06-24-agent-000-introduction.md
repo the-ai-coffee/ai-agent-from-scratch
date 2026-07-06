@@ -63,8 +63,8 @@ recognize all of it.
 | 003 | [Conversation History]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history %}) | Short-term memory: a `messages` list carried across turns. |
 | 004 | [The System Prompt]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt %}) | A configurable persona/instructions, separate from turns. |
 | 005 | [The First Tool]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call %}) | The model can request one tool; we run it. |
-| 006 | tool-result-loop | The tool's result loops back to the model for a final answer. |
-| 007 | multi-tool-dispatch | A real registry: the model chooses among several tools, or none. |
+| 006 | [Closing the Loop]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}) | The tool's result loops back to the model for a final answer. |
+| 007 | [A Toolbox, Not a Tool]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch %}) | A real registry: the model chooses among several tools, or none. |
 | 008 | malformed-tool-call-handling | Bad JSON, unknown tools, raised exceptions -- handled, not fatal. |
 | 009 | knowledge-tools | The first tools with real guts: agentic search vs. RAG over a small vector store. |
 | 010 | context-compaction | When the history no longer fits: summarize old turns, keep recent ones. |

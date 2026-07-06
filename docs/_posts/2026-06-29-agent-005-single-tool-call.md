@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, tools, function-calling]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call-fr %})
 
-By agent-004 our agent had a memory and a persona, but it still only ever *talked*. Ask it "what's 4823 times 1979?" and it would confidently produce a number -- which might be wrong, because a language model predicts text, it doesn't calculate. It couldn't look anything up, run anything, or touch the world outside its own words. This stage cracks that open. We give the agent its first **tool**.
+By [agent-004]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt %}) our agent had a memory and a persona, but it still only ever *talked*. Ask it "what's 4823 times 1979?" and it would confidently produce a number -- which might be wrong, because a language model predicts text, it doesn't calculate. It couldn't look anything up, run anything, or touch the world outside its own words. This stage cracks that open. We give the agent its first **tool**.
 
 ## A brain getting its first hand
 
@@ -89,7 +89,7 @@ It can't yet say "That works out to 5." -- because the model never saw the `5`. 
 
 That's not an oversight -- it's the seam between this stage and the next. We're deliberately stopping halfway through the tool-use cycle so you can see the two halves separately: *this* stage is "the model asks, we run it"; the next stage is "the result goes back, and the model speaks." Splitting them makes each half legible before they fuse into the loop that defines an agent.
 
-There's a practical reason we drop the turn from memory too (`messages.pop()`). A tool request that never gets a result fed back is an unfinished exchange -- leaving it in the history would break the very next call. Since the model isn't really part of this exchange yet, the cleanest thing is to not record it. In agent-006, recording it properly is exactly what lets the model continue.
+There's a practical reason we drop the turn from memory too (`messages.pop()`). A tool request that never gets a result fed back is an unfinished exchange -- leaving it in the history would break the very next call. Since the model isn't really part of this exchange yet, the cleanest thing is to not record it. In [agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}), recording it properly is exactly what lets the model continue.
 
 ## A note on safety
 

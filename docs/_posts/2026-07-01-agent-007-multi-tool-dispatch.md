@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, tools, dispatch, mcp]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch-fr %})
 
-In agent-006 we closed the loop: the model asks for a tool, we run it, we feed the result back, and the model answers. That loop is the agent -- we said so at the time, and we meant it. But our agent owns exactly one tool, and worse, that tool's name is hardwired into the code: somewhere in the loop sits a line that says, in effect, "if the model asked for the calculator, run the calculator." That works fine for one tool. It stops being a design and starts being a pile the moment you add a second.
+In [agent-006]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}) we closed the loop: the model asks for a tool, we run it, we feed the result back, and the model answers. That loop is the agent -- we said so at the time, and we meant it. But our agent owns exactly one tool, and worse, that tool's name is hardwired into the code: somewhere in the loop sits a line that says, in effect, "if the model asked for the calculator, run the calculator." That works fine for one tool. It stops being a design and starts being a pile the moment you add a second.
 
 This stage adds the second tool -- and with it, the thing one tool never forces you to build: a *registry*.
 

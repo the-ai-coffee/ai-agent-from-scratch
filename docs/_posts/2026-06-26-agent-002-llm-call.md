@@ -8,7 +8,7 @@ tags: [ai, agents, llm, claude, python, anthropic-sdk]
 
 🇬🇧 English | [🇫🇷 Français]({{ site.baseurl }}{% post_url 2026-06-26-agent-002-llm-call-fr %})
 
-Agent-001 built the read-act-repeat loop with the simplest possible action: echo the line back. This stage keeps that loop completely intact and swaps in the only thing that changes between an echo and an agent -- the action itself is now a call an LLM, for instance Claude AI.
+[Agent-001]({{ site.baseurl }}{% post_url 2026-06-25-agent-001-echo-loop %}) built the read-act-repeat loop with the simplest possible action: echo the line back. This stage keeps that loop completely intact and swaps in the only thing that changes between an echo and an agent -- the action itself is now a call an LLM, for instance Claude AI.
 
 ## The code
 

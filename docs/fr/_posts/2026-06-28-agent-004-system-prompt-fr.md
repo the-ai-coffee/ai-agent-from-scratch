@@ -8,7 +8,7 @@ tags: [ia, agents, llm, claude, python, prompt-systeme, persona]
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-06-28-agent-004-system-prompt %}) | 🇫🇷 Français
 
-Agent-003 a donné une mémoire à notre agent : une liste `messages` qui grandit, renvoyée à chaque tour, pour qu'il puisse suivre une conversation au lieu de traiter chaque ligne comme une page blanche. Mais il manque encore quelque chose. L'agent n'a aucun *caractère* propre. Il n'a aucune instruction permanente — aucune idée de qui il est ni de la manière dont il doit se comporter — au-delà de ce qui se trouve dans la conversation jusque-là. Cette étape ajoute exactement cela, avec un nouvel ingrédient : le **prompt système**.
+[Agent-003]({{ site.baseurl }}{% post_url 2026-06-27-agent-003-conversation-history-fr %}) a donné une mémoire à notre agent : une liste `messages` qui grandit, renvoyée à chaque tour, pour qu'il puisse suivre une conversation au lieu de traiter chaque ligne comme une page blanche. Mais il manque encore quelque chose. L'agent n'a aucun *caractère* propre. Il n'a aucune instruction permanente — aucune idée de qui il est ni de la manière dont il doit se comporter — au-delà de ce qui se trouve dans la conversation jusque-là. Cette étape ajoute exactement cela, avec un nouvel ingrédient : le **prompt système**.
 
 ## Des instructions qui ne font pas partie de la conversation
 
