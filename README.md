@@ -32,8 +32,8 @@ See [CLAUDE.md](CLAUDE.md) for repo conventions and commands.
 | 004 | system-prompt | Built | [agents/agent-004-system-prompt](agents/agent-004-system-prompt) | [The System Prompt](docs/_posts/2026-06-28-agent-004-system-prompt.md) |
 | 005 | single-tool-call | Built | [agents/agent-005-single-tool-call](agents/agent-005-single-tool-call) | [The First Tool](docs/_posts/2026-06-29-agent-005-single-tool-call.md) |
 | 006 | tool-result-loop | Built | [agents/agent-006-tool-result-loop](agents/agent-006-tool-result-loop) | [Closing the Loop](docs/_posts/2026-06-30-agent-006-tool-result-loop.md) |
-| 007 | multi-tool-dispatch | Planned | -- | -- |
-| 008 | malformed-tool-call-handling | Planned | -- | -- |
+| 007 | multi-tool-dispatch | Built | [agents/agent-007-multi-tool-dispatch](agents/agent-007-multi-tool-dispatch) | [A Toolbox, Not a Tool](docs/_posts/2026-07-01-agent-007-multi-tool-dispatch.md) |
+| 008 | malformed-tool-call-handling | Built | [agents/agent-008-malformed-tool-call-handling](agents/agent-008-malformed-tool-call-handling) | [Sturdiness Before Substance](docs/_posts/2026-07-02-agent-008-malformed-tool-call-handling.md) |
 | 009 | knowledge-tools (agentic search vs. RAG) | Planned | -- | -- |
 | 010 | context-compaction | Planned | -- | -- |
 | 011 | subagents (agent-as-tool) | Planned | -- | -- |
