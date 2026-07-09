@@ -5,6 +5,7 @@ description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.112.0",
+    "numpy>=2.4.6",
 ]
 
 [dependency-groups]

@@ -73,8 +73,8 @@ AutoGen, pour que vous puissiez enfin voir ce que ces frameworks font
 | 005 | [Le premier outil]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call-fr %}) | Le modèle peut demander un outil ; on l'exécute. |
 | 006 | [Fermer la boucle]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop-fr %}) | Le résultat de l'outil revient au modèle pour une réponse finale. |
 | 007 | [Une boîte à outils, pas un outil]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch-fr %}) | Un vrai registre : le modèle choisit parmi plusieurs outils, ou aucun. |
-| 008 | malformed-tool-call-handling | JSON invalide, outils inconnus, exceptions levées — gérés, et non fatals. |
-| 009 | knowledge-tools | Les premiers outils avec de vraies tripes : recherche agentique vs. RAG sur un petit vector store. |
+| 008 | [La solidité avant le fond]({{ site.baseurl }}{% post_url 2026-07-02-agent-008-malformed-tool-call-handling-fr %}) | JSON invalide, outils inconnus, exceptions levées — gérés, et non fatals. |
+| 009 | [Donner du savoir à l'agent]({{ site.baseurl }}{% post_url 2026-07-03-agent-009-knowledge-tools-fr %}) | Les premiers outils avec de vraies tripes : recherche agentique vs. RAG sur un petit vector store. |
 | 010 | context-compaction | Quand l'historique ne tient plus : résumer les vieux tours, garder les récents. |
 | 011 | subagents | Le multi-agent, démystifié : un agent comme outil, pour isoler le contexte. |
 | 012 | evals-and-tracing | Journalisation pensée-vs-action, plus un harnais d'évaluation scripté. |

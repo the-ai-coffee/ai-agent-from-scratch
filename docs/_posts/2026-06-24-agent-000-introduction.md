@@ -65,8 +65,8 @@ recognize all of it.
 | 005 | [The First Tool]({{ site.baseurl }}{% post_url 2026-06-29-agent-005-single-tool-call %}) | The model can request one tool; we run it. |
 | 006 | [Closing the Loop]({{ site.baseurl }}{% post_url 2026-06-30-agent-006-tool-result-loop %}) | The tool's result loops back to the model for a final answer. |
 | 007 | [A Toolbox, Not a Tool]({{ site.baseurl }}{% post_url 2026-07-01-agent-007-multi-tool-dispatch %}) | A real registry: the model chooses among several tools, or none. |
-| 008 | malformed-tool-call-handling | Bad JSON, unknown tools, raised exceptions -- handled, not fatal. |
-| 009 | knowledge-tools | The first tools with real guts: agentic search vs. RAG over a small vector store. |
+| 008 | [Sturdiness Before Substance]({{ site.baseurl }}{% post_url 2026-07-02-agent-008-malformed-tool-call-handling %}) | Bad JSON, unknown tools, raised exceptions -- handled, not fatal. |
+| 009 | [Giving the Agent Knowledge]({{ site.baseurl }}{% post_url 2026-07-03-agent-009-knowledge-tools %}) | The first tools with real guts: agentic search vs. RAG over a small vector store. |
 | 010 | context-compaction | When the history no longer fits: summarize old turns, keep recent ones. |
 | 011 | subagents | Multi-agent, demystified: an agent as a tool, for context isolation. |
 | 012 | evals-and-tracing | Logging thought-vs-action, plus a scripted eval harness. |
