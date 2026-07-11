@@ -34,10 +34,10 @@ See [CLAUDE.md](CLAUDE.md) for repo conventions and commands.
 | 006 | tool-result-loop | Built | [agents/agent-006-tool-result-loop](agents/agent-006-tool-result-loop) | [Closing the Loop](docs/_posts/2026-06-30-agent-006-tool-result-loop.md) |
 | 007 | multi-tool-dispatch | Built | [agents/agent-007-multi-tool-dispatch](agents/agent-007-multi-tool-dispatch) | [A Toolbox, Not a Tool](docs/_posts/2026-07-01-agent-007-multi-tool-dispatch.md) |
 | 008 | malformed-tool-call-handling | Built | [agents/agent-008-malformed-tool-call-handling](agents/agent-008-malformed-tool-call-handling) | [Sturdiness Before Substance](docs/_posts/2026-07-02-agent-008-malformed-tool-call-handling.md) |
-| 009 | knowledge-tools (agentic search vs. RAG) | Planned | -- | -- |
-| 010 | context-compaction | Planned | -- | -- |
-| 011 | subagents (agent-as-tool) | Planned | -- | -- |
-| 012 | evals-and-tracing | Planned | -- | -- |
+| 009 | knowledge-tools (agentic search vs. RAG) | Built | [agents/agent-009-knowledge-tools](agents/agent-009-knowledge-tools) | [Giving the Agent Knowledge](docs/_posts/2026-07-03-agent-009-knowledge-tools.md) |
+| 010 | context-compaction | Built | [agents/agent-010-context-compaction](agents/agent-010-context-compaction) | [An Agent that Manages the Context](docs/_posts/2026-07-09-agent-010-context-compaction.md) |
+| 011 | subagents (agent-as-tool) | Built | [agents/agent-011-subagents](agents/agent-011-subagents) | [Subagent - An Agent as a Tool](docs/_posts/2026-07-11-agent-011-subagents.md) |
+| 012 | evals-and-tracing | Built | [agents/agent-012-evals-and-tracing](agents/agent-012-evals-and-tracing) | [Trust, but Verify](docs/_posts/2026-07-11-agent-012-evals-and-tracing.md) |
 | 013 | capstone | Planned | -- | -- |
 
 Details on what each planned stage covers and why it's scoped the way it is live in [ROADMAP.md](ROADMAP.md).
