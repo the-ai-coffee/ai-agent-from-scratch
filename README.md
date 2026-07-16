@@ -38,6 +38,6 @@ See [CLAUDE.md](CLAUDE.md) for repo conventions and commands.
 | 010 | context-compaction | Built | [agents/agent-010-context-compaction](agents/agent-010-context-compaction) | [An Agent that Manages the Context](docs/_posts/2026-07-09-agent-010-context-compaction.md) |
 | 011 | subagents (agent-as-tool) | Built | [agents/agent-011-subagents](agents/agent-011-subagents) | [Subagent - An Agent as a Tool](docs/_posts/2026-07-11-agent-011-subagents.md) |
 | 012 | evals-and-tracing | Built | [agents/agent-012-evals-and-tracing](agents/agent-012-evals-and-tracing) | [Trust, but Verify](docs/_posts/2026-07-11-agent-012-evals-and-tracing.md) |
-| 013 | capstone | Planned | -- | -- |
+| 013 | capstone | Built | [agents/agent-013-capstone](agents/agent-013-capstone) | [Everything at Once, Nothing New](docs/_posts/2026-07-12-agent-013-capstone.md) |
 
 Details on what each planned stage covers and why it's scoped the way it is live in [ROADMAP.md](ROADMAP.md).

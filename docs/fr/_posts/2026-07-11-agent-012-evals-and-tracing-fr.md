@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Agent-012 : Évals et traçage - La confiance n'exclut pas le contrôle"
+title: "Agent-012 : Évals et traces - La confiance n'exclut pas le contrôle"
 date: 2026-07-11
 author: mikamboo
-tags: [ia, agents, llm, claude, python, evals, tracage, observabilite, tests]
+tags: [ia, agents, llm, claude, python, evals, trace, observabilite, tests]
 ---
 
 [🇬🇧 English]({{ site.baseurl }}{% post_url 2026-07-11-agent-012-evals-and-tracing %}) | 🇫🇷 Français
@@ -12,14 +12,14 @@ Notre agent a grandi. Depuis [agent-011]({{ site.baseurl }}{% post_url 2026-07-1
 
 Cette étape n'ajoute aucune capacité nouvelle à l'agent. Elle ajoute deux choses *autour* de l'agent, qui répondent à la même question par deux côtés — **que fait réellement l'agent, et est-il réellement bon ?**
 
-- **Le traçage** : un registre continu de chaque décision du modèle, avec son étiquette de prix.
+- **La trace** : un registre continu de chaque décision du modèle, avec son étiquette de prix.
 - **Les évals** : des conversations scénarisées aux propriétés attendues, notées automatiquement.
 
 ## On ne répare pas ce qu'on ne voit pas
 
 Imaginez une course en taxi où vous ne voyez que le montant à l'arrivée. Quarante euros — était-ce un trajet honnête, ou le chauffeur a-t-il fait trois fois le tour du pâté de maisons ? Sans l'itinéraire, impossible de discuter. Jusqu'ici, notre agent était ce taxi : on tapait une question, une réponse sortait, et tout ce qui se passait entre les deux — combien de fois le modèle a été appelé, quels outils il a saisis, combien de tokens chaque appel a brûlés — était invisible.
 
-Le traçage, c'est la carte du trajet. À partir de cette étape, chaque appel au modèle laisse une ligne dans le journal :
+La trace, c'est la carte du trajet. À partir de cette étape, chaque appel au modèle laisse une ligne dans le journal :
 
 ```
 [trace] stop=tool_use tools=calculator tokens=312+47 cost=$0.000359
@@ -28,7 +28,7 @@ Le traçage, c'est la carte du trajet. À partir de cette étape, chaque appel a
 
 Lisez-en une à voix haute et c'est une phrase complète sur une décision : *le modèle s'est arrêté parce qu'il voulait un outil ; l'outil était la calculatrice ; l'appel a lu 312 tokens et en a écrit 47 ; ça a coûté un trentième de centime.* La seconde ligne est l'appel de conclusion : pas d'outil, juste la réponse finale.
 
-Il n'y a aucun framework de traçage derrière — c'est le même `output_stream.write` que nous utilisons depuis [agent-001]({{ site.baseurl }}{% post_url 2026-06-25-agent-001-echo-loop-fr %}), alimenté par deux champs que l'API retourne à chaque réponse (`usage.input_tokens` et `usage.output_tokens`) et deux constantes :
+Il n'y a aucun framework de tracing derrière — c'est le même `output_stream.write` que nous utilisons depuis [agent-001]({{ site.baseurl }}{% post_url 2026-06-25-agent-001-echo-loop-fr %}), alimenté par deux champs que l'API retourne à chaque réponse (`usage.input_tokens` et `usage.output_tokens`) et deux constantes :
 
 ```python
 PRICE_PER_MTOK_INPUT = 1.00   # dollars par million de tokens d'entrée (Haiku 4.5)
@@ -114,4 +114,4 @@ Les tests unitaires, eux, font ce qu'ils ont toujours fait — avec le faux clie
 
 ## Et après
 
-L'agent est construit — et maintenant il est observable et mesurable, en plus. Il y a treize étapes, cette série promettait qu'« agent IA » ne cache aucune magie, juste une boucle ; chaque mécanisme que vendent les frameworks est depuis sorti de cette boucle, un petit morceau à la fois. Il reste une étape, et elle n'ajoute rien de neuf, à dessein : un **capstone** qui fait tout tourner ensemble — les outils de savoir, un subagent qui délègue, la compaction, le harnais d'évals — puis se retourne vers LangGraph, CrewAI et AutoGen avec des yeux de bâtisseur, pour voir ce que ces frameworks font réellement pour vous.
+L'agent est construit — et maintenant il est observable et mesurable, en plus. Il y a treize étapes, cette série promettait qu'« agent IA » ne cache aucune magie, juste une boucle ; chaque mécanisme que vendent les frameworks est depuis sorti de cette boucle, un petit morceau à la fois. Il reste une étape, et elle n'ajoute rien de neuf, à dessein : [un **capstone**]({{ site.baseurl }}{% post_url 2026-07-12-agent-013-capstone-fr %}) qui fait tout tourner ensemble — les outils de savoir, un subagent qui délègue, la compaction, le harnais d'évals — puis se retourne vers LangGraph, CrewAI et AutoGen avec des yeux de bâtisseur, pour voir ce que ces frameworks font réellement pour vous.
